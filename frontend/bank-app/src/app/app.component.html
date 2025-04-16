@@ -1,0 +1,23 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Bank App</a>
+    </div>
+  </nav>
+
+  <div class="container mt-4">
+    <!-- Alertes globales -->
+    <div *ngFor="let alert of alerts" class="alert alert-{{alert.type}} alert-dismissible fade show" role="alert">
+      {{alert.message}}
+      <button type="button" class="btn-close" (click)="removeAlert(alert)" aria-label="Close"></button>
+    </div>
+
+    <!-- Alertes du service -->
+    <div *ngIf="alert$ | async as alert" class="alert alert-{{alert.type}} alert-dismissible fade show" role="alert">
+      {{alert.message}}
+      <button type="button" class="btn-close" (click)="clearAlert()" aria-label="Close"></button>
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>

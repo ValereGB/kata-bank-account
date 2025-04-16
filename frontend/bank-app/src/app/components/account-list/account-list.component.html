@@ -1,0 +1,31 @@
+<div class="container mt-4">
+  <h2>Liste des Comptes</h2>
+  
+  <button class="btn btn-primary mb-3" (click)="createAccount()">
+    Créer un nouveau compte
+  </button>
+
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Numéro de compte</th>
+          <th>Propriétaire</th>
+          <th>Solde</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let account of accounts">
+          <td>{{ account.accountNumber }}</td>
+          <td>{{ account.owner }}</td>
+          <td>{{ account.balance | currency:'EUR' }}</td>
+          <td>
+            <button class="btn btn-info btn-sm me-2" [routerLink]="['/accounts', account.accountNumber]">Détails</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteAccount(account.accountNumber)">Supprimer</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> 
