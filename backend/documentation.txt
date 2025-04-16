@@ -1,0 +1,38 @@
+Fichiers de l'application :
+
+# Contrôleurs et Web
+AccountController.java - Gère les requêtes HTTP pour les opérations bancaires (création compte, dépôt, retrait, solde).
+GlobalExceptionHandler.java - Gère les erreurs de l'application et renvoie des réponses HTTP appropriées.
+TransactionResponse.java - DTO pour la réponse des transactions.
+
+# Modèles
+Account.java - Représente un compte bancaire avec son numéro, propriétaire, solde et historique des transactions.
+Transaction.java - Représente une opération bancaire (dépôt ou retrait) avec son type, montant et date.
+TransactionType.java - Enumération définissant les types de transactions possibles (DEPOSIT, WITHDRAW).
+
+# Repositories
+AccountRepository.java - Interface définissant les opérations de stockage des comptes.
+AccountRepositoryImpl.java - Implémentation du stockage des comptes en mémoire.
+
+# Services
+AccountService.java - Interface définissant les opérations métier sur les comptes.
+AccountServiceImpl.java - Implémente la logique métier des opérations bancaires.
+
+# Exceptions
+AccountAlreadyExistsException.java - Exception levée lors de la création d'un compte existant.
+InvalidAmountException.java - Exception levée pour les montants invalides.
+InsufficientFundsException.java - Exception levée lors d'un retrait avec solde insuffisant.
+AccountNotFoundException.java - Exception levée lors de l'accès à un compte inexistant.
+
+# Configuration
+BankApplication.java - Point d'entrée de l'application Spring Boot.
+BankConfig.java - Configuration générale de l'application.
+OpenAPIConfig.java - Configuration de la documentation Swagger.
+
+# Tests
+AccountControllerIntegrationTest.java - Teste le flux complet des opérations bancaires et les cas d'erreur.
+AccountControllerErrorTest.java - Teste spécifiquement les cas d'erreur des opérations bancaires.
+AccountRepositoryImplTest.java - Teste le stockage des comptes.
+AccountTest.java - Teste les fonctionnalités de base d'un compte.
+AccountServiceImplTest.java - Teste la logique métier des opérations bancaires.
+SpringContextTest.java - Vérifie que le contexte Spring se charge correctement. 

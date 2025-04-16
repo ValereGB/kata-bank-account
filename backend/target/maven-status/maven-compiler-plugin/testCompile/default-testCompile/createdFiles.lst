@@ -1,0 +1,6 @@
+com\kata\bank\integration\SpringContextTest.class
+com\kata\bank\adapter\in\web\AccountControllerErrorTest.class
+com\kata\bank\domain\service\AccountServiceImplTest.class
+com\kata\bank\domain\model\AccountTest.class
+com\kata\bank\adapter\in\web\AccountControllerIntegrationTest.class
+com\kata\bank\adapter\out\persistence\AccountRepositoryImplTest.class
